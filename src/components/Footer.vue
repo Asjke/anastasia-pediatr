@@ -1,7 +1,7 @@
 <template lang="pug">
   footer
     .footer
-      .contraindications Имеются противопоказания, необходима очная консультация врача
+      .contraindications
 </template>
 
 <script>
