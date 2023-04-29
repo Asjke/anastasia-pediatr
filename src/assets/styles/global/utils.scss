@@ -1,0 +1,111 @@
+:root {
+  --animate-delay: 0.2s;
+  --animate-duration: 0.7s;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-base;
+  color: $color-font-base;
+  background-color: $color-bg;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  outline-color: $color-blue;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+input,
+input::placeholder,
+button {
+  font-family: $font-base;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+
+  clip: rect(0 0 0 0);
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+
+  .header,
+  .footer {
+    flex-shrink: 0;
+  }
+
+  main {
+    flex-grow: 1;
+  }
+
+  &--profile {
+    main {
+      background-color: #F4F4F9;
+    }
+  }
+
+  &--landing {
+    background-color: #F9F9F9;
+
+    main {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+.notify-list {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 130%;
+
+  > *:not(:last-of-type) {
+    margin-bottom: 8px;
+  }
+}
+
+.anchor {
+  padding-top: 82px;
+  margin-top: -82px;
+  -webkit-background-clip: content-box;
+  background-clip: content-box;
+}

@@ -1,0 +1,45 @@
+.v-switcher {
+  .el-switch {
+    display: flex;
+    align-items: center;
+    height: auto;
+
+    &.is-checked {
+      .el-switch__core {
+        border-color: $color-blue;
+        background-color: $color-blue;
+      }
+    }
+  }
+
+  .el-switch__label {
+    height: auto;
+    margin-left: 12px;
+  }
+
+  .el-switch__label span {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 120%;
+    color: $color-font-base;
+
+    @include media(s) {
+      font-size: 14px;
+    }
+  }
+
+  .el-switch__core {
+    flex-shrink: 0;
+    height: 24px;
+    border-radius: 12px;
+
+    &:after {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .el-switch.is-checked .el-switch__core::after {
+    margin-left: -21px;
+  }
+}

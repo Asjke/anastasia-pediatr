@@ -1,0 +1,22 @@
+.v-back-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 130%;
+  color: $color-blue;
+  transition: $default-transition-settings;
+
+  &:hover,
+  &:focus {
+    color: $color-red;
+  }
+
+  .v-icon {
+    transition: none;
+    margin-right: 14px;
+    margin-bottom: 2px;
+  }
+}

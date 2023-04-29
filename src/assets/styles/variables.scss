@@ -1,0 +1,42 @@
+$font-base: "Montserrat", "Arial", sans-serif;
+$font-secondary: "Segoe UI", "Arial", sans-serif;
+
+$color-font-base: #4A4A84;
+$color-font-secondary: rgba(0, 32, 51, 0.6);
+
+$color-pink: #e5b5da;
+$color-white: #FFFFFF;
+$color-black: #000000;
+$color-grey: #F4F4F4;
+$color-blue: #595BF5;
+$color-blue-secondary: rgba(0, 57, 92, 0.8);
+$color-red: #FD4F4A;
+$color-orange: #F38B00;
+$color-orange-2: #FFA10A;
+$color-green: #22C38E;
+$color-green-2: #09B37B;
+
+$color-system: #DEE4E8;
+$color-bg: #FDFDFD;
+
+$default-transition-settings: 0.3s ease-out;
+$modal-transition-settings: 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+
+$screens: (
+        2xl: 1919,
+        xl: 1600,
+        l: 1365,
+        m: 1024,
+        s: 767,
+        xs: 576,
+        2xs: 375
+);
+
+@mixin media($value) {
+  $width: map_get($screens, $value);
+  @if ($width != 0) {
+    @media screen and (max-width: $width + 'px') {
+      @content
+    }
+  }
+}

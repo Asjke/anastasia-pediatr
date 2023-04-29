@@ -1,0 +1,643 @@
+.v-input {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &._error {
+    .el-input__inner,
+    .el-textarea__inner {
+      border-color: $color-red !important;
+
+      &:hover,
+      &:focus {
+        border-color: $color-red !important;
+      }
+    }
+
+    .v-input__custom-input {
+      border-color: $color-red !important;
+
+      &:hover,
+      &:focus {
+        border-color: $color-red !important;
+      }
+    }
+  }
+}
+
+.v-input__label-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+
+  ._required {
+    color: $color-red;
+  }
+}
+
+.v-input__label {
+  margin-right: 4px;
+  font-size: 18px;
+  line-height: 150%;
+  color: $color-font-base;
+
+  @include media(m) {
+    font-weight: 600;
+  }
+
+  @include media(s) {
+    font-size: 14px;
+  }
+}
+
+.v-input__prompt {
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 120%;
+  color: $color-orange;
+
+  @include media(m) {
+    font-size: 14px;
+  }
+}
+
+.v-input__input-container {
+  position: relative;
+  width: 100%;
+}
+
+.v-input__password-btn {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  color: rgba(0, 66, 105, 0.28);
+
+  &:hover,
+  &:focus {
+    color: $color-blue;
+  }
+}
+
+.v-input__file {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 16px 0 24px 0;
+
+  > .v-icon {
+    flex-shrink: 0;
+    margin-right: 8px;
+  }
+}
+
+.v-input__file-content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+}
+
+.v-input__file-label {
+  margin-bottom: 4px;
+  font-weight: 500;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: $color-font-base;
+  transition: $default-transition-settings;
+
+  &:hover,
+  &:focus {
+    color: $color-blue;
+  }
+}
+
+.v-input__file-size {
+  color: rgba(0, 32, 51, 0.3);
+}
+
+.v-input__file-delete {
+  margin-left: auto;
+}
+
+.v-input__custom-input {
+  width: 100%;
+  height: 48px;
+  padding: 0 15px;
+  background: $color-white;
+  border: 1px solid rgba(0, 66, 105, 0.28);
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: #002033;
+  box-sizing: border-box;
+  transition: $default-transition-settings;
+  outline: none;
+
+  @include media(s) {
+    font-size: 16px;
+  }
+
+  &:hover:not(:disabled),
+  &:focus:not(:disabled) {
+    border-color: $color-blue;
+  }
+
+  &::placeholder {
+    color: rgba(0, 32, 51, 0.35);
+  }
+
+  &:disabled {
+    background: rgba(0, 66, 105, 0.07);
+    border: none;
+    color: $color-font-base;
+    cursor: not-allowed;
+  }
+}
+
+.v-input__tooltip {
+  margin-left: 6px;
+}
+
+.v-input__errors-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding-left: 8px;
+
+  span {
+    width: 100%;
+    padding-top: 6px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.4;
+    color: $color-red;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.v-input__input {
+  // input
+  &.el-input {
+    .el-input__inner {
+      height: 48px;
+      background: $color-white;
+      border: 1px solid rgba(0, 66, 105, 0.28);
+      border-radius: 4px;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 150%;
+      color: #002033;
+
+      @include media(s) {
+        font-size: 16px;
+      }
+
+      &:hover:not(:disabled),
+      &:focus:not(:disabled) {
+        border-color: $color-blue;
+      }
+    }
+
+    &._password {
+      .el-input__inner {
+        padding-right: 44px;
+      }
+    }
+
+    &.is-disabled {
+      .el-input__inner {
+        background: rgba(0, 66, 105, 0.07);
+        border: 1px solid rgba(0, 66, 105, 0.07);
+        color: $color-font-base;
+      }
+    }
+  }
+
+  // textarea
+  &.el-textarea {
+    .el-textarea__inner {
+      padding: 10px 15px 32px 15px;
+      background: $color-white;
+      border: 1px solid rgba(0, 66, 105, 0.28);
+      border-radius: 4px;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 150%;
+      color: #002033;
+
+      @include media(s) {
+        font-size: 16px;
+      }
+
+      &:hover:not(:disabled),
+      &:focus:not(:disabled) {
+        border-color: $color-blue;
+      }
+    }
+
+    &.is-disabled {
+      .el-textarea__inner {
+        background: rgba(0, 66, 105, 0.07);
+        border: 1px solid rgba(0, 66, 105, 0.07);
+        color: $color-font-base;
+      }
+    }
+  }
+
+  &.el-autocomplete {
+    width: 100%;
+    .el-input__inner {
+      height: 48px;
+      background: $color-white;
+      border: 1px solid rgba(0, 66, 105, 0.28);
+      border-radius: 4px;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 150%;
+      color: #002033;
+
+      @include media(s) {
+        font-size: 16px;
+      }
+
+      &:hover:not(:disabled),
+      &:focus:not(:disabled) {
+        border-color: $color-blue;
+      }
+    }
+
+    .el-input {
+      &.is-disabled {
+        .el-input__inner {
+          background: rgba(0, 66, 105, 0.07);
+          border: none;
+          color: $color-font-base;
+        }
+      }
+    }
+  }
+
+  // date-picker
+  &.el-date-editor {
+    display: flex;
+    width: 100%;
+
+    .el-input__inner {
+      padding: 0 30px 0 15px;
+      color: #002033;
+    }
+
+    .el-input__prefix {
+      display: none;
+    }
+
+    .el-icon-circle-close {
+      position: absolute;
+      cursor: pointer;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 12px;
+      transition: none;
+      width: 12px;
+      height: 12px;
+      background: url("@/assets/images/icons/icon-close-small.svg") no-repeat 50%;
+      background-size: contain;
+      opacity: 0.2;
+
+      &:hover {
+        opacity: 0.7;
+      }
+
+      &:after,
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  &.el-select {
+    width: 100%;
+
+    .el-input__inner {
+      height: 48px;
+      padding-right: 40px;
+      background: $color-white;
+      border: 1px solid rgba(0, 66, 105, 0.28);
+      border-radius: 4px;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 150%;
+      color: #002033;
+
+      @include media(s) {
+        font-size: 16px;
+      }
+
+      &:hover:not(:disabled),
+      &:focus:not(:disabled) {
+        border-color: $color-blue;
+      }
+    }
+
+    .el-input.is-disabled {
+      .el-input__inner {
+        background: rgba(0, 66, 105, 0.07);
+        border: none;
+        color: $color-font-base;
+      }
+    }
+
+    .el-input__prefix {
+      display: none;
+    }
+
+    .el-icon-circle-close {
+      position: absolute;
+      cursor: pointer;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 12px;
+      transition: none;
+      width: 12px;
+      height: 12px;
+      background: url("@/assets/images/icons/icon-close-small.svg") no-repeat 50%;
+      background-size: contain;
+      opacity: 0.2;
+
+      &:hover {
+        opacity: 0.7;
+      }
+
+      &:after,
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  &._disabled {
+    .el-upload {
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+  }
+
+  .el-upload {
+    position: relative;
+    width: 100%;
+
+    &:focus .el-upload-dragger {
+      background-color: $color-white;
+      border-color: $color-blue;
+    }
+
+    .el-upload-dragger {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 110px;
+      border: 2px dashed rgba(0, 66, 105, 0.28);
+      border-radius: 4px;
+      background-color: #FDFDFD;
+      transition: $default-transition-settings;
+
+      &:hover,
+      &:focus {
+        background-color: $color-white;
+        border-color: $color-blue;
+      }
+    }
+
+    .v-input__input-upload-text {
+      ._desktop {
+        @include media(s) {
+          display: none;
+        }
+      }
+
+      ._mobile {
+        display: none;
+
+        @include media(s) {
+          display: block;
+        }
+      }
+
+      p {
+        margin-bottom: 8px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        text-align: center;
+        color: $color-font-base;
+      }
+
+      em {
+        font-style: normal;
+        color: $color-blue;
+      }
+
+      span {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 140%;
+        text-align: center;
+        color: rgba(0, 32, 51, 0.3);
+      }
+    }
+
+    .v-input__progress-bar {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: rgba(89, 91, 245, 0.1);
+    }
+  }
+}
+
+.v-input__textarea-max-length {
+  pointer-events: none;
+  position: absolute;
+  bottom: 6px;
+  left: 10px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 150%;
+  color: $color-font-secondary;
+
+  strong {
+    color: $color-font-base;
+  }
+}
+
+.v-input.v-input--small {
+  .v-input__label-container {
+    margin-bottom: 2px;
+  }
+
+  .v-input__label {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: $color-font-secondary;
+  }
+
+  .v-input__input {
+    .el-input__inner {
+      height: 40px;
+      font-size: 16px;
+      line-height: 22px;
+
+      &::placeholder {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+  }
+
+  .v-input__custom-input {
+    font-weight: 400;
+    height: 40px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+//====================== el-select-dropdown
+
+.el-select-dropdown.el-popper {
+  width: min-content;
+  margin-top: 6px;
+  border: 1px solid rgba(0, 65, 102, 0.2);
+  box-shadow: 0 4px 4px rgba(0, 32, 51, 0.04), 0 8px 24px rgba(0, 32, 51, 0.12);
+  border-radius: 4px;
+
+  .el-select-dropdown__item,
+  .el-select-dropdown__empty {
+    height: auto;
+    padding: 12px 15px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    overflow: visible;
+    text-overflow: inherit;
+    white-space: normal;
+
+    @include media(s) {
+      font-size: 16px;
+    }
+
+    &.selected {
+      font-weight: 500;
+      color: $color-blue;
+    }
+  }
+
+  .popper__arrow {
+    display: none;
+  }
+}
+
+.el-autocomplete-suggestion li {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: inherit;
+}
+
+.el-autocomplete-suggestion.el-popper {
+  margin-top: 6px;
+  border: 1px solid rgba(0, 65, 102, 0.2);
+  box-shadow: 0 4px 4px rgba(0, 32, 51, 0.04), 0 8px 24px rgba(0, 32, 51, 0.12);
+  border-radius: 4px;
+
+  li {
+    height: auto;
+    padding: 10px 15px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+
+    @include media(s) {
+      font-size: 16px;
+    }
+
+    &.selected {
+      font-weight: 500;
+      color: $color-blue;
+    }
+  }
+
+  .popper__arrow {
+    display: none;
+  }
+}
+
+//====================== el-date-picker
+
+.el-date-picker__header-label.active,
+.el-date-picker__header-label:hover {
+  color: $color-blue;
+}
+
+.el-date-range-picker {
+  .el-input__inner:focus {
+    border-color: $color-blue;
+  }
+
+  .el-button--text {
+    color: $color-blue;
+  }
+
+  .el-button.is-plain:focus,
+  .el-button.is-plain:hover {
+    color: $color-blue;
+    border-color: $color-blue;
+  }
+}
+
+.el-picker-panel__icon-btn:hover,
+.el-date-table td.available:hover,
+.el-year-table td .cell:hover,
+.el-year-table td.current:not(.disabled) .cell {
+  color: $color-blue;
+}
+
+.el-time-panel__btn.confirm {
+  color: $color-blue;
+}
+
+.el-date-table td.current:not(.disabled) span,
+.el-date-table td.end-date span,
+.el-date-table td.start-date span {
+  background-color: $color-blue;
+}
+
+.el-date-table td.in-range div,
+.el-date-table td.in-range div:hover,
+.el-date-table.is-week-mode .el-date-table__row.current div,
+.el-date-table.is-week-mode .el-date-table__row:hover div, {
+  background-color: rgba(89, 91, 245, 0.4);
+}
+
+.el-date-table td.today span,
+.el-year-table td.today .cell {
+  color: $color-blue;
+  font-weight: 700;
+}

@@ -1,0 +1,19 @@
+.v-tooltip {
+  cursor: help;
+}
+
+.el-tooltip__popper.is-light {
+  width: 260px;
+  border: none;
+  background: $color-white;
+  border-radius: 4px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 32, 51, 0.04)) drop-shadow(0px 8px 24px rgba(0, 32, 51, 0.12));
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 140%;
+  color: #002033;
+
+  .popper__arrow {
+    border-color: transparent !important;
+  }
+}

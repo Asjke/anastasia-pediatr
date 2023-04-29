@@ -1,0 +1,156 @@
+.v-notifications {
+  width: 340px;
+  max-height: 400px;
+  padding: 0;
+  background: $color-white;
+  border-radius: 8px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 32, 51, 0.04)) drop-shadow(0px 8px 24px rgba(0, 32, 51, 0.12));
+  overflow: auto;
+  word-break: break-word;
+  text-align: left;
+  color: $color-font-base;
+
+  &.el-popper[x-placement^=bottom] {
+    margin-top: 17px;
+  }
+}
+
+.v-notifications__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  border-bottom: 1px solid #CCD9E0;
+}
+
+.v-notifications__close {
+  color: #97B2C4;
+
+  .v-icon {
+    transition: none;
+  }
+
+  &:hover,
+  &:focus {
+    color: $color-blue;
+  }
+}
+
+.v-notifications__btn {
+  position: relative;
+
+  &:hover,
+  &:focus {
+    .v-icon {
+      transform-origin: top;
+      animation: din-don 0.5s;
+    }
+  }
+}
+
+.v-notifications__btn-circle {
+  position: absolute;
+  z-index: 1;
+  top: 7px;
+  right: 7px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: $color-red;
+}
+
+.v-notifications__list {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  max-height: 300px;
+}
+.v-notifications__list::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+.v-notifications__list::-webkit-scrollbar-thumb {
+  background: rgba(89, 91, 245, 0.4);
+  border-radius: 5px;
+}
+
+.v-notifications__item {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  border-bottom: 1px solid #CCD9E0;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
+
+.v-notifications__item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.v-notifications__item-date {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.v-notifications__item-delete {
+  margin-right: 4px;
+  color: #97B2C4;
+
+  .v-icon {
+    transition: none;
+  }
+
+  &:hover,
+  &:focus {
+    color: $color-red;
+  }
+}
+
+.v-notifications__footer {
+  padding: 12px;
+  border-top: 1px solid #CCD9E0;
+}
+
+.v-notifications__btn-clear {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 24px;
+  color: $color-blue;
+}
+
+.v-notifications__empty {
+  padding: 12px;
+}
+
+.v-notifications__item-text,
+.v-notifications__empty {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+@keyframes din-don {
+  0% {
+    transform: rotate(6deg);
+  }
+  40% {
+    transform: rotate(-6deg);
+  }
+  60% {
+    transform: rotate(6deg);
+  }
+  80% {
+    transform: rotate(-6deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

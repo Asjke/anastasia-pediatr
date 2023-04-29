@@ -1,0 +1,109 @@
+.v-checkbox {
+  display: flex;
+  flex-direction: column;
+
+  &--normal {
+    .v-checkbox__label {
+      font-size: 18px;
+
+      @include media(s) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &--small {
+    .v-checkbox__label {
+      font-size: 12px;
+    }
+  }
+}
+
+.v-checkbox__container {
+  display: flex;
+  align-items: center;
+}
+
+.v-checkbox__label {
+  margin-left: 12px;
+  font-weight: 400;
+  line-height: 120%;
+  color: $color-font-base;
+
+  a {
+    text-decoration-line: underline;
+    color: $color-blue;
+    transition: $default-transition-settings;
+
+    &:hover,
+    &:focus {
+      color: $color-font-base;
+    }
+  }
+
+
+}
+
+.v-checkbox__errors-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding-left: 34px;
+
+  span {
+    width: 100%;
+    padding-top: 6px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.4;
+    color: $color-red;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.el-checkbox {
+  display: flex;
+  align-items: center;
+  margin: 0;
+
+  & + .el-checkbox {
+    margin-top: 16px;
+  }
+}
+
+.el-checkbox__inner {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  background-color: #FAFBFC;
+  border: 1px solid #B8BBBF;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+  &::after {
+    top: 4px;
+    left: 7px;
+  }
+}
+
+.el-checkbox__label,
+.el-checkbox__input.is-checked+.el-checkbox__label {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: $color-black;
+}
+
+.el-checkbox__input.is-checked .el-checkbox__inner {
+  background-color: $color-blue;
+  border-color: $color-blue;
+}
+
+.el-checkbox__input.is-focus .el-checkbox__inner {
+  border-color: $color-blue;
+  box-shadow: 0 0 3px $color-blue;
+}

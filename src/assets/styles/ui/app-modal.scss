@@ -1,0 +1,143 @@
+.app-modal {
+  position: relative;
+  width: fit-content !important;
+  background: transparent !important;
+  box-shadow: none !important;
+
+  &._slider {
+    width: 80% !important;
+    max-width: 800px !important;
+  }
+}
+
+.app-modal__close {
+  position: absolute;
+  z-index: 1;
+  top: 12px;
+  right: 12px;
+  color: $color-font-base;
+}
+
+.app-modal__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 364px;
+  padding: 40px 32px;
+  background: $color-white;
+  box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.07), 0px 12px 16px rgba(0, 0, 0, 0.07), 0px 8px 8px rgba(0, 0, 0, 0.07), 0px 4px 4px rgba(0, 0, 0, 0.07), 0px 2px 2px rgba(0, 0, 0, 0.07);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.app-modal__title {
+  margin-bottom: 24px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  color: $color-font-base;
+}
+
+.app-modal__text {
+  margin-bottom: 28px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $color-font-base;
+
+  &--center {
+    text-align: center;
+  }
+}
+
+.app-modal__btn-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 32px;
+
+  > *:not(:last-of-type) {
+    margin-bottom: 16px;
+  }
+}
+
+.app-modal__social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 34px;
+
+  span {
+    margin-bottom: 24px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 130%;
+    color: $color-font-secondary
+  }
+}
+
+.app-modal__social-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.app-modal__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  border: 1px solid rgba(0, 65, 102, 0.2);
+  border-radius: 16px;
+  transition: $default-transition-settings;
+
+  &:hover,
+  &:focus {
+    background-color: $color-grey;
+
+    .v-icon {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.app-modal__policy {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 130%;
+  text-align: center;
+
+  a {
+    text-decoration-line: underline;
+    color: $color-blue;
+    transition: $default-transition-settings;
+
+    &:hover,
+    &:focus {
+      color: $color-font-base;
+    }
+  }
+}
+
+.app-modal__min-btn {
+  min-width: 200px;
+}
+
+// Кастомизация el-dialog
+//---------------------------------
+
+.v-modal {
+  background-color: rgb(53, 62, 91, 1) !important;
+}
+
+.el-dialog__header {
+  display: none !important;
+}
+
+.el-dialog__body {
+  padding: 0 !important;
+  word-break: normal !important;
+}
+
